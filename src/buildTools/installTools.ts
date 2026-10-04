@@ -221,8 +221,8 @@ export function getPlatformSpecificNodeLink(
   return platformLink;
 }
 
-// latest gallium is the latest lts v16 version. 
-const nodeLatestURL = 'https://nodejs.org/dist/latest-gallium/';
+// latest krypton is the latest lts v24 version. 
+const nodeLatestURL = 'https://nodejs.org/dist/latest-krypton/';
 
 /**
  * Gets the latest node version download filename for the current platform.
