@@ -155,7 +155,7 @@
     "test": "node ./out/test/runTest.js",
     "coverage": "nyc --exclude=.vscode-test --exclude=src/test/**  npm run test",
     "test:unit": "npm run compile:test && npm run lint && TEST_ENVIRONMENT=unit node ./out/test/runTest.js",
-    "vscode:prepublish": "rspack --mode production && rm dist/extension.js.map",
+    "vscode:prepublish": "rspack --mode production",
     "compile:dev": "rspack --mode development",
     "compile:test": "tsc -p ./ ",
     "lint": "eslint src --ext ts",

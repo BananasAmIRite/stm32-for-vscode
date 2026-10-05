@@ -79,9 +79,13 @@ function extractSingleLineVariablesFromMakefile(makefile: string): { [key: strin
 
   const variablesSplit = variables?.map((variableLine: string) => {
     const variableAndString = variableAndStringMatcher.exec(variableLine);
+    const valuesString = (variableAndString?.[2] ?? '').replace(
+      /\$\(\s*wildcard\s+([^\)]+)\)/g,
+      '$1'
+    );
     return {
       name: variableAndString?.[1],
-      values: variableAndString?.[2]
+      values: valuesString
         .split(' ')
         .filter((entryString) => entryString !== '')
         .map((entryString) => entryString.trim())
